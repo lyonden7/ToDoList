@@ -11,12 +11,12 @@ import Foundation
 protocol ITaskRepository {
 	/// Метод, возвращающий список задач из репозитория.
 	/// - Returns: Список задач.
-	func getTask() -> [Task]
+	func getTasks() -> [Task]
 }
 
 /// Класс, реализующий протокол репозитория.
 final class TaskRepositoryStub: ITaskRepository {
-	func getTask() -> [Task] {
+	func getTasks() -> [Task] {
 		[
 			ImportantTask(title: "Important task 1", taskPriority: .high),
 			ImportantTask(title: "Important task 2", taskPriority: .medium),

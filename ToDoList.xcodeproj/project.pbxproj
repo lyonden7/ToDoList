@@ -19,6 +19,10 @@
 		28AA745A29A1934A008F1E65 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA745929A1934A008F1E65 /* Repository.swift */; };
 		28AA745C29A19360008F1E65 /* OrderedTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA745B29A19360008F1E65 /* OrderedTaskManager.swift */; };
 		28AA745E29A1936E008F1E65 /* SectionForTaskManagerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA745D29A1936E008F1E65 /* SectionForTaskManagerAdapter.swift */; };
+		28AA74EB29A39981008F1E65 /* ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA74EA29A39981008F1E65 /* ViewData.swift */; };
+		28AA74ED29A39A72008F1E65 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA74EC29A39A72008F1E65 /* Presenter.swift */; };
+		28AA74EF29A3D98C008F1E65 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA74EE29A3D98C008F1E65 /* ModuleBuilder.swift */; };
+		28AA74F129A44685008F1E65 /* ToDoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AA74F029A44685008F1E65 /* ToDoListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		28AA745929A1934A008F1E65 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		28AA745B29A19360008F1E65 /* OrderedTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedTaskManager.swift; sourceTree = "<group>"; };
 		28AA745D29A1936E008F1E65 /* SectionForTaskManagerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionForTaskManagerAdapter.swift; sourceTree = "<group>"; };
+		28AA74EA29A39981008F1E65 /* ViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewData.swift; sourceTree = "<group>"; };
+		28AA74EC29A39A72008F1E65 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		28AA74EE29A3D98C008F1E65 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		28AA74F029A44685008F1E65 /* ToDoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +76,11 @@
 		28AA6D31299D4205008F1E65 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				28AA6D49299D4255008F1E65 /* MainScreen */,
-				28AA745729A19332008F1E65 /* ITaskManager.swift */,
-				28AA745929A1934A008F1E65 /* Repository.swift */,
-				28AA745B29A19360008F1E65 /* OrderedTaskManager.swift */,
-				28AA745D29A1936E008F1E65 /* SectionForTaskManagerAdapter.swift */,
+				28AA74E929A39964008F1E65 /* Model */,
+				28AA6D49299D4255008F1E65 /* View */,
+				28AA74E629A3979A008F1E65 /* Presenter */,
+				28AA74E729A3987A008F1E65 /* ITaskManager */,
+				28AA74E829A39888008F1E65 /* Services */,
 				28AA6D51299D4997008F1E65 /* BL */,
 				28AA6D46299D422F008F1E65 /* Storyboards */,
 				28AA6D47299D423F008F1E65 /* App */,
@@ -108,12 +116,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		28AA6D49299D4255008F1E65 /* MainScreen */ = {
+		28AA6D49299D4255008F1E65 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				28AA6D4C299D42BB008F1E65 /* ToDoListViewController.swift */,
+				28AA74F029A44685008F1E65 /* ToDoListViewController.xib */,
+				28AA745D29A1936E008F1E65 /* SectionForTaskManagerAdapter.swift */,
 			);
-			path = MainScreen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		28AA6D51299D4997008F1E65 /* BL */ = {
@@ -123,6 +133,40 @@
 				28AA6D4F299D4962008F1E65 /* Tasks.swift */,
 			);
 			path = BL;
+			sourceTree = "<group>";
+		};
+		28AA74E629A3979A008F1E65 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				28AA74EC29A39A72008F1E65 /* Presenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		28AA74E729A3987A008F1E65 /* ITaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				28AA745729A19332008F1E65 /* ITaskManager.swift */,
+				28AA745B29A19360008F1E65 /* OrderedTaskManager.swift */,
+			);
+			path = ITaskManager;
+			sourceTree = "<group>";
+		};
+		28AA74E829A39888008F1E65 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				28AA745929A1934A008F1E65 /* Repository.swift */,
+				28AA74EE29A3D98C008F1E65 /* ModuleBuilder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		28AA74E929A39964008F1E65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28AA74EA29A39981008F1E65 /* ViewData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AA74F129A44685008F1E65 /* ToDoListViewController.xib in Resources */,
 				28AA6D3F299D4208008F1E65 /* LaunchScreen.storyboard in Resources */,
 				28AA6D3C299D4208008F1E65 /* Assets.xcassets in Resources */,
 				28AA6D3A299D4205008F1E65 /* Main.storyboard in Resources */,
@@ -198,13 +243,16 @@
 			files = (
 				28AA745A29A1934A008F1E65 /* Repository.swift in Sources */,
 				28AA6D50299D4962008F1E65 /* Tasks.swift in Sources */,
+				28AA74ED29A39A72008F1E65 /* Presenter.swift in Sources */,
 				28AA745E29A1936E008F1E65 /* SectionForTaskManagerAdapter.swift in Sources */,
 				28AA6D33299D4205008F1E65 /* AppDelegate.swift in Sources */,
+				28AA74EB29A39981008F1E65 /* ViewData.swift in Sources */,
 				28AA745829A19332008F1E65 /* ITaskManager.swift in Sources */,
 				28AA6D53299D49A4008F1E65 /* TaskManager.swift in Sources */,
 				28AA6D4D299D42BB008F1E65 /* ToDoListViewController.swift in Sources */,
 				28AA745C29A19360008F1E65 /* OrderedTaskManager.swift in Sources */,
 				28AA6D35299D4205008F1E65 /* SceneDelegate.swift in Sources */,
+				28AA74EF29A3D98C008F1E65 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
