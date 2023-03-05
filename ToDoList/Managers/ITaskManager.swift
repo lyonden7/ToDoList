@@ -21,7 +21,7 @@ protocol ITaskManager {
 	
 	/// Метод для добавления списка задач в список.
 	/// - Parameter tasks: Список задач.
-	func addTasks(_ tasks: [Task])
+	func addTasks(tasks: [Task])
 }
 
 extension TaskManager: ITaskManager { }

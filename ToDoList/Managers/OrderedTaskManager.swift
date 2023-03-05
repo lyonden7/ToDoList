@@ -28,8 +28,8 @@ final class OrderedTaskManager: ITaskManager {
 		sorted(tasks: taskManager.getUncompletedTasks())
 	}
 	
-	public func addTasks(_ tasks: [Task]) {
-		taskManager.addTasks(tasks)
+	public func addTasks(tasks: [Task]) {
+		taskManager.addTasks(tasks: tasks)
 	}
 	
 	// MARK: - Private methods

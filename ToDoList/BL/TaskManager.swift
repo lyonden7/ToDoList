@@ -37,7 +37,7 @@ final class TaskManager {
 	
 	/// Метод для добавления списка задач в список.
 	/// - Parameter tasks: Список задач.
-	public func addTasks(_ tasks: [Task]) {
+	public func addTasks(tasks: [Task]) {
 		taskList.append(contentsOf: tasks)
 	}
 	

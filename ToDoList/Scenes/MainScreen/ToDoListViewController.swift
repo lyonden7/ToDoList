@@ -1,5 +1,5 @@
 //
-//  ToDoListViewController.swift
+//  MainViewController.swift
 //  ToDoList
 //
 //  Created by Денис Васильев on 15.02.2023.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Контроллер, отображающий список выполненных и невыполненных задач.
-final class ToDoListViewController: UIViewController {
+final class MainViewController: UIViewController {
 	
 	@IBOutlet var tableView: UITableView!
 	
@@ -25,7 +25,7 @@ final class ToDoListViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension ToDoListViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
 		presenter.setNumberOfSections()
 	}
@@ -60,7 +60,7 @@ extension ToDoListViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension ToDoListViewController: UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		presenter.changeTaskStatus(at: indexPath)
 		tableView.reloadData()
@@ -68,7 +68,7 @@ extension ToDoListViewController: UITableViewDelegate {
 }
 
 // MARK: - IView
-extension ToDoListViewController: IView {
+extension MainViewController: IView {
 	func render(viewData: ViewData) {
 		self.viewData = viewData
 	}
