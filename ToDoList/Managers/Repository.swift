@@ -14,6 +14,7 @@ protocol ITaskRepository {
 	func getTasks() -> [Task]
 }
 
+// MARK: - TaskRepositoryStub
 /// Класс, реализующий протокол репозитория.
 final class TaskRepositoryStub: ITaskRepository {
 	func getTasks() -> [Task] {

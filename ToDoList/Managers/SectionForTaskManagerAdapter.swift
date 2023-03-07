@@ -14,17 +14,17 @@ protocol ISectionForTaskManagerAdapter {
 	func getSections() -> [Section]
 	
 	/// Метод, возвращающий по номеру секции необходимый список задач.
-	/// - Parameter section: Секция..
+	/// - Parameter section: Секция.
 	/// - Returns: Список задач.
 	func getTasksForSection(section: Section) -> [Task]
 	
-	func taskSectionAndIndex(task: Task) -> (section: Section, index: Int)?
-	
-	func getSectionIndex(section: Section) -> Int
-	
+	/// Метод, возвращающий секцию по индексу.
+	/// - Parameter index: Индекс секции.
+	/// - Returns: Секция.
 	func getSection(forIndex index: Int) -> Section
 }
 
+/// Перечисление возможных секций.
 enum Section: CaseIterable {
 	case completed
 	case uncompleted
@@ -39,6 +39,7 @@ enum Section: CaseIterable {
 	}
 }
 
+// MARK: - SectionForTaskManagerAdapter
 /// Адаптер для TaskManager.
 final class SectionForTaskManagerAdapter: ISectionForTaskManagerAdapter {
 
@@ -61,21 +62,6 @@ final class SectionForTaskManagerAdapter: ISectionForTaskManagerAdapter {
 		case .uncompleted:
 			return taskManager.getUncompletedTasks()
 		}
-	}
-	
-	func taskSectionAndIndex(task: Task) -> (section: Section, index: Int)? {
-		for section in sections {
-			let index = getTasksForSection(section: section).firstIndex { task === $0 }
-			if index != nil {
-				return (section, index!)
-			}
-		}
-		
-		return nil
-	}
-	
-	func getSectionIndex(section: Section) -> Int {
-		sections.firstIndex(of: section) ?? 0
 	}
 	
 	func getSection(forIndex index: Int) -> Section {

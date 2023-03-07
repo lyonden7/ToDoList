@@ -8,6 +8,7 @@
 /// Предоставляет список задач.
 final class TaskManager {
 	// MARK: - Private properties
+	/// Список задач.
 	private var taskList: [Task] = []
 	
 	// MARK: - Public methods

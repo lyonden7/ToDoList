@@ -7,12 +7,16 @@
 
 import Foundation
 
-/// Протокол, описывающий Presenter.
+/// Протокол, описывающий MainPresenter.
 protocol IMainPresenter: AnyObject {
+	/// Метод,  в котором View сообщает Presenter, что она готова к работе.
 	func viewIsReady()
+	/// Метод,  в котором View сообщает Presenter, что пользователь выбрал задачу.
+	/// - Parameter indexPath: Индекс выбранной ячейки.
 	func didTaskSelected(at indexPath: IndexPath)
 }
 
+/// Класс, реализующий MainPresenter.
 final class MainPresenter: IMainPresenter {
 	private weak var view: IMainViewController!
 	private let sectionManager: ISectionForTaskManagerAdapter!

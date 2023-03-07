@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Task
 /// Класс, описывающий задачу.
 class Task {
-	/// Название задачи
+	/// Название задачи.
 	var title: String
 	/// Статус выполнения задачи.
 	var isCompleted = false

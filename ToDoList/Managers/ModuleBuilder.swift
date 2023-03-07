@@ -14,8 +14,11 @@ protocol IModuleBuilder {
 	static func createMainModule() -> UIViewController
 }
 
+// MARK: - ModuleBuilder
 /// Класс, реализующий протокол для сборки экранов.
 final class ModuleBuilder: IModuleBuilder {
+	/// Метод, создающий MainViewController со всеми зависимостями.
+	/// - Returns: MainViewController.
 	static func createMainModule() -> UIViewController {
 		let view = MainViewController()
 		let taskManager = OrderedTaskManager(taskManager: TaskManager())
